@@ -13,6 +13,7 @@ namespace Ccovar.DataModel
 
     public class Renta
     {
+        //hola soy anahi//
         public int? id { get; set; }
         public int? id_cliente { get; set; }
         public int? id_auto { get; set; }
