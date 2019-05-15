@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +51,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Autos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Autos.Designer.cs">
+      <DependentUpon>Autos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Autos.cs" />
+    <Compile Include="DataModel\Clientes.cs" />
+    <Compile Include="DataModel\Marcas.cs" />
+    <Compile Include="DataModel\Rentas.cs" />
+    <Compile Include="DataModel\Usuarios.cs" />
+    <Compile Include="Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\SQLHelper.cs" />
+    <Compile Include="Incidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incidencias.Designer.cs">
+      <DependentUpon>Incidencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerSQL.cs" />
+    <Compile Include="Mantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos.Designer.cs">
+      <DependentUpon>Mantenimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marcas.Designer.cs">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rentas.Designer.cs">
+      <DependentUpon>Rentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosPanel.Designer.cs">
+      <DependentUpon>UsuariosPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Autos.resx">
+      <DependentUpon>Autos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incidencias.resx">
+      <DependentUpon>Incidencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos.resx">
+      <DependentUpon>Mantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marcas.resx">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +152,15 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Rentas.resx">
+      <DependentUpon>Rentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosPanel.resx">
+      <DependentUpon>UsuariosPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +173,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\fa-solid-900.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Minimize_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\CcovarLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Ccovar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
