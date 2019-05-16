@@ -13,6 +13,7 @@ namespace Ccovar.DataModel
 
     public class Cliente
     {
+        //hola soy adolfo
         public int? id { get; set; }
         public String nombre { get; set; }
         public String apellido_paterno { get; set; }
